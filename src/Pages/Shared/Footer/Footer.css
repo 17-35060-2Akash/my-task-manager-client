@@ -1,0 +1,52 @@
+.platform-icons a {
+    text-decoration: none;
+    /* color: white; */
+}
+
+.platform-icons a:hover {
+    color: cadetblue;
+}
+
+.footer-div a {
+    color: rgb(47, 46, 46);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-div a:hover {
+    color: red;
+}
+
+
+@media screen and (max-width: 800px) {
+    .footer-logo {
+        width: 20%;
+    }
+
+    .comp-logo {
+        font-size: medium;
+    }
+
+    .office-address {
+        font-size: small;
+        margin: 0 10px;
+    }
+
+    .links-list a {
+        font-size: small;
+        padding: 0 10px;
+    }
+
+    .social-tab a {
+        font-size: x-large;
+        padding: 0 8px;
+
+    }
+
+    .copyright {
+        font-size: small;
+
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {}
