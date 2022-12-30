@@ -21,22 +21,27 @@ const Navbar = () => {
 
     const menuItems =
         <React.Fragment>
-            <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600  flex-nowrap'><Link className='flex flex-nowrap justify-center align-middle' to='/'>
-                <svg aria-hidden="true" className="mr-2 w-7 h-7 pb-1 text-blue-600 dark:text-cyan-500 group-hover:text-gray-500  dark:group-hover:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"></path></svg>
+            <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 pt-3 px-2 pr-4 hover:bg-slate-100 dark:hover:text-gray-600  flex-nowrap'><Link className='flex flex-nowrap justify-center align-middle' to='/'>
+                <svg aria-hidden="true" className="mr-1 w-7 h-7 pb-1 text-blue-600 dark:text-cyan-500 group-hover:text-gray-500  dark:group-hover:text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"></path></svg>
                 Add Task
             </Link></li>
-            <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600'><Link className='flex flex-nowrap justify-center align-middle' to='/mytask'>
-                <svg aria-hidden="true" className="mr-2 w-7 h-7 pb-1 text-blue-600 dark:text-cyan-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+            <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 pt-3 px-2 pr-4  hover:bg-slate-100 dark:hover:text-gray-600'><Link className='flex flex-nowrap justify-center align-middle' to='/mytask'>
+                <svg aria-hidden="true" className="mr-1 w-7 h-7 pb-1 text-blue-600 dark:text-cyan-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                 My Task
             </Link></li>
-            {/* <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600'><Link to='/completedtasks'>Completed Tasks</Link></li> */}
+            <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 pt-3 px-2 pr-4  hover:bg-slate-100 dark:hover:text-gray-600'><Link className='flex flex-nowrap justify-center align-middle' to='/completedtasks'>
+                <svg aria-hidden="true" className="mr-1 w-7 h-7 pb-1 font-bold text-blue-600 dark:text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                Completed
+            </Link></li>
+
+            {/* <li className='font-medium text-gray-700 dark:text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 pt-3 px-2 pr-4  hover:bg-slate-100 dark:hover:text-gray-600'><Link to='/completedtasks'>Completed Tasks</Link></li> */}
             {
                 user?.uid ?
                     <React.Fragment>
-                        <li onClick={handleLogOut} className='font-medium text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-3 hover:bg-rose-700 bg-rose-500'>Logout</li>
+                        <li onClick={handleLogOut} className='font-medium text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 mt-1 px-3 hover:bg-rose-700 bg-rose-500'>Logout</li>
                     </React.Fragment>
                     :
-                    <li className='font-medium text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-4  hover:bg-cyan-500 bg-blue-600'><Link to='/login'>Login</Link></li>
+                    <li className='font-medium text-white transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 mt-1 px-4  hover:bg-cyan-500 bg-blue-600'><Link to='/login'>Login</Link></li>
             }
         </React.Fragment>
 
@@ -44,7 +49,7 @@ const Navbar = () => {
         <React.Fragment>
             <li className='font-medium text-gray-700  transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600  flex-nowrap'><Link to='/'>Add Task</Link></li>
             <li className='font-medium text-gray-700  transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600'><Link to='/mytask'>My Task</Link></li>
-            {/* <li className='font-medium text-gray-700  transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600'><Link to='/completedtasks'>Completed Tasks</Link></li> */}
+            <li className='font-medium text-gray-700  transition-colors duration-200 hover:text-deep-purple-accent-400 py-2 px-2  hover:bg-slate-100 dark:hover:text-gray-600'><Link to='/completedtasks'>Completed</Link></li>
             {
                 user?.uid ?
                     <React.Fragment>
@@ -56,10 +61,11 @@ const Navbar = () => {
         </React.Fragment>
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <div>
             <div className="px-4 py-5 mx-auto  md:px-24 lg:px-28">
-                <div className="relative flex flex-nowrap justify-around">
+                <div className="relative flex flex-nowrap justify-between">
 
                     {/* Large Devices */}
                     <div>
@@ -69,28 +75,10 @@ const Navbar = () => {
                             title="Company"
                             className="inline-flex items-center"
                         >
-                            {/* <svg
-                            className="w-8 text-deep-purple-accent-400"
-                            viewBox="0 0 24 24"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeMiterlimit="10"
-                            stroke="currentColor"
-                            fill="none"
-                        >
-                            <rect x="3" y="1" width="7" height="12" />
-                            <rect x="3" y="17" width="7" height="6" />
-                            <rect x="14" y="1" width="7" height="6" />
-                            <rect x="14" y="11" width="7" height="12" />
-                        </svg> */}
-                            {/* <span className="ml-2 text-xl font-bold text-gray-800 ">
-                            Task Manager
-                        </span> */}
                             <img className='w-40 md:w-1/2 lg:w-2/5 mt-3.5 md:mt-2 lg:mt-1' src={logo} alt="" />
                         </Link>
                     </div>
-                    <div className='mr-2 mt-1'>
+                    <div className='mr-2 '>
                         <ul className="flex items-start hidden space-x-8 lg:flex uppercase">
 
                             {menuItems}
@@ -101,7 +89,7 @@ const Navbar = () => {
                     <div className=''>
                         {
                             isProfileOpen &&
-                            <div id="dropdown" className="absolute top-14 md:top-10 right-2 md:right-0 z-10 text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-60 dark:bg-gray-700 ">
+                            <div id="dropdown" className="absolute top-14 md:top-16 lg:top-10 right-2 md:right-0 z-10 text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-60 dark:bg-gray-700 ">
                                 <div className="py-1" aria-labelledby="dropdownButton">
 
                                     {/* profile section  */}
@@ -137,23 +125,23 @@ const Navbar = () => {
 
                     <div title='Profile'
                         onClick={() => setIsProfileOpen(!isProfileOpen)}
-                        className='font-bold ml-3 mt-3 lg:mt-2 mx-1 text-sm lg:text-lg dark:text-white flex flex-nowrap' >
+                        className='font-bold ml-3 mt-2 md:mt-1 lg:-mt-0 mx-1 text-sm lg:text-lg dark:text-white flex flex-nowrap hover:bg-slate-100 dark:hover:bg-slate-50 pl-3 pt-2.5 dark:hover:text-slate-600 ' >
                         {user?.displayName ?
 
-                            <h3 className='hidden md:block md:mt-1.5 lg:mt-0'>Hi, <span className='text-blue-500 dark:text-cyan-500 uppercase '> {user?.displayName}</span> </h3>
+                            <h3 className='hidden lg:block md:mt-2.5 lg:mt-0'>Hi, <span className='text-blue-500 dark:text-cyan-500 uppercase '> {user?.displayName}</span> </h3>
                             : ''
 
                         }
                         {
                             user?.displayName &&
-                            <svg aria-hidden="true" className="ml-1 mr-2 pb-1 lg:pb-2 mt-1 lg:mt-0 w-9 h-9 text-gray-400 hover:text-gray-600 dark:text-gray-100 dark:hover:text-slate-300 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd"></path></svg>
+                            <svg aria-hidden="true" className="ml-1 mr-2  pb-0 lg:pb-2 w-9 h-9 text-gray-400 hover:text-gray-600 dark:text-gray-200 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd"></path></svg>
 
                         }
                     </div>
 
                     <div
                         title={`${theme} mode`}
-                        className='mt-4 pt-0.5 lg:pt-0 lg:mt-2'>
+                        className='mt-5 md:mt-4 lg:mt-2.5 pt-0.5 lg:pt-0 mr-2 lg:mr-0'>
                         <ReactSwitch onChange={handleThemeSwitch}
                             checked={theme === 'dark'}
                         ></ReactSwitch>
@@ -165,7 +153,7 @@ const Navbar = () => {
                         <button
                             aria-label="Open Menu"
                             title="Open Menu"
-                            className="p-2 -mr-1 mt-3.5 lg:mt-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50 "
+                            className="p-2 -mr-1 mt-4 md:mt-3.5 lg:mt-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50 "
                             onClick={() => setIsMenuOpen(true)}
                         >
                             <svg className="w-5 text-gray-600 dark:text-gray-100" viewBox="0 0 24 24">
@@ -216,11 +204,18 @@ const Navbar = () => {
                                                 <img className='w-2/4' src={logo} alt="" />
                                             </a>
                                         </div>
-                                        <div className='font-semibold ml-3 mt-1 text-md lg:text-lg'>
+                                        <div
+                                            onClick={() => setIsProfileOpen(!isProfileOpen)}
+                                            className='font-semibold ml-3 mt-1 text-xs md:text-sm lg:text-lg flex flex-nowrap'>
                                             {user?.displayName ?
 
-                                                <h3>Hi, <span className='text-blue-500  uppercase'> {user?.displayName}</span> </h3>
+                                                <h3 className='mt-3 mr-0.5'>Hi, <span className='text-blue-500  uppercase'> {user?.displayName}</span> </h3>
                                                 : ''
+
+                                            }
+                                            {
+                                                user?.displayName &&
+                                                <svg aria-hidden="true" className=" mr-2 mt-2 md:mt-0.5 lg:mt-0 w-10 h-10 text-gray-400 hover:text-gray-600 dark:text-gray-200 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clipRule="evenodd"></path></svg>
 
                                             }
                                         </div>
@@ -239,7 +234,7 @@ const Navbar = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    <nav>
+                                    <nav onClick={() => setIsProfileOpen(false)}>
                                         <ul className="space-y-4 uppercase">
                                             {menuItemsDropDown}
                                         </ul>

@@ -5,13 +5,14 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import Task from './Task';
 import Swal from "sweetalert2";
 import { toast } from 'react-hot-toast';
+import Loader from '../../components/Loader';
 
 const MyTask = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
 
-    const { data: tasks = [], refetch } = useQuery({
+    const { data: tasks = [], refetch, isLoading } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
             const res = await fetch(`https://my-task-manager-server.vercel.app/tasks?email=${user?.email}`);
@@ -51,6 +52,32 @@ const MyTask = () => {
             });
     };
 
+    const handleChangeStatus = (task) => {
+        // console.log(task);
+
+        fetch(`https://my-task-manager-server.vercel.app/tasks/updatestatus/${task._id}?status=${'Completed'}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+
+                    toast.success(`${task.task_name} task has been completed!`);
+                }
+
+                else {
+                    toast.error(`Something went wrong completing the ${task.task_name} task.`);
+                }
+                // refetch();
+            })
+    };
+
+
+
+    if (isLoading) {
+        return <Loader></Loader>
+    }
+
 
     return (
         <section className='my-16 mb-40'>
@@ -68,6 +95,7 @@ const MyTask = () => {
                                 key={task._id}
                                 task={task}
                                 handleDelete={handleDelete}
+                                handleChangeStatus={handleChangeStatus}
                             >
                             </Task>)
                         }

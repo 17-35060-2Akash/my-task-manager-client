@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { FaPen, FaPenAlt, FaTrashAlt } from 'react-icons/fa';
@@ -11,6 +12,10 @@ const CompletedTasks = () => {
 
     const [commentToggler, setCommentToggler] = useState(false);
     const navigate = useNavigate();
+
+    const date = new Date();
+    const todays_date = format(date, 'PP');
+    const todays_time = format(date, 'p');
 
     const handleComment = () => {
         const comment = document.getElementById('comment').value;
@@ -77,6 +82,27 @@ const CompletedTasks = () => {
             });
     };
 
+    const handleChangeStatus = (task) => {
+        // console.log(task);
+
+        fetch(`https://my-task-manager-server.vercel.app/tasks/updatestatus/${task._id}?status=${'Not Completed'}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+
+                    toast.success(`${task.task_name} task is not completed!`);
+                    navigate('/mytask');
+                }
+
+                else {
+                    toast.error(`Something went wrong changing the not completed status of the ${task.task_name} task.`);
+                }
+                // refetch();
+            })
+    };
+
 
 
     return (
@@ -88,10 +114,10 @@ const CompletedTasks = () => {
                 </div>
                 <h5 className="mb-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{task_name}</h5>
                 <p className="mb-1 font-normal text-gray-700 dark:text-gray-400">{posted_time}</p>
-                <p className="mb-8 font-normal text-gray-700 dark:text-gray-400">{posted_date}</p>
-                <Link to='/mytask'>
-                    <button type="button" className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Not Completed</button>
-                </Link>
+                <p className="mb-8 font-normal text-gray-700 dark:text-gray-400">{posted_date === todays_date ? 'Today' : posted_date}</p>
+                {/* <Link to='/mytask'> */}
+                <button onClick={() => handleChangeStatus(task)} type="button" className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Not Completed</button>
+                {/* </Link> */}
                 <button onClick={() => setCommentToggler(!commentToggler)} type="button" className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-9 py-2.5 text-center mr-2 mb-2">Comment</button>
 
                 {

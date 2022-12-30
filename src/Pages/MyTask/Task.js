@@ -1,11 +1,16 @@
+import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Task = ({ task, handleDelete }) => {
+const Task = ({ task, handleDelete, handleChangeStatus }) => {
     const { _id, task_name, img, email, status, posted_date, posted_time, comment } = task;
     // console.log(task);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showComment, setShowComment] = useState(false);
+
+    const date = new Date();
+    const todays_date = format(date, 'PP');
+    const todays_time = format(date, 'p');
 
     return (
 
@@ -28,7 +33,7 @@ const Task = ({ task, handleDelete }) => {
                     <div id="dropdown" className="absolute z-10 text-base list-none bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 ">
                         <ul className="py-1" aria-labelledby="dropdownButton">
                             <li>
-                                <Link to={`/tasks/${_id}`} className="block px-4 py-2 text-sm text-blue-700 hover:bg-gray-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white">Edit</Link>
+                                <Link to={`/tasks/${_id}`} className="block px-4 py-2 text-sm text-blue-700 hover:bg-gray-100  dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</Link>
                             </li>
                             <li>
                                 <button onClick={() => handleDelete(task)} className="block w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" >Delete</button>
@@ -37,11 +42,11 @@ const Task = ({ task, handleDelete }) => {
                             {
                                 showComment === true ?
                                     <li>
-                                        <button onClick={() => setShowComment(!showComment)} className="block w-full px-4 py-2 text-sm text-cyan-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" >Hide Comment</button>
+                                        <button onClick={() => setShowComment(!showComment)} className="block w-full px-4 py-2 text-sm text-cyan-600 hover:text-white hover:bg-rose-500 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" >Hide Comment</button>
                                     </li>
                                     :
                                     <li>
-                                        <button onClick={() => setShowComment(!showComment)} className="block w-full px-4 py-2 text-sm text-cyan-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" >Show Comment</button>
+                                        <button onClick={() => setShowComment(!showComment)} className="block w-full px-4 py-2 text-sm text-cyan-600 hover:text-white hover:bg-rose-500 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" >Show Comment</button>
                                     </li>
                             }
                         </ul>
@@ -52,13 +57,22 @@ const Task = ({ task, handleDelete }) => {
                 <img className="w-28 h-28 mb-3 rounded-full shadow-lg" src={img} alt="Bonnie image" />
                 <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{task_name}</h5>
                 <span className="text-sm text-gray-500 dark:text-gray-400">{posted_time}</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{posted_date}</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{posted_date === todays_date ? 'Today' : posted_date}</span>
                 <div className="flex mt-4 space-x-3 md:mt-6 ">
                     {/* <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add friend</button> */}
                     {/* <a href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Message</a> */}
-                    <Link to={`/completedtasks/${_id}`}>
-                        <button type="button" className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-full text-md px-8 py-2.5 text-center mr-2 mb-2 ">Completed</button>
-                    </Link>
+                    {
+                        status === "Completed" ?
+                            <p className='text-white bg-slate-500 dark:focus:ring-purple-800 font-medium rounded-full text-md px-8 py-2.5 text-center mr-2 mb-2'>Completed!</p>
+                            :
+                            <Link to={`/completedtasks/${_id}`}>
+                                <button
+                                    // disabled={status === "Completed"}
+                                    onClick={() => handleChangeStatus(task)} type="button" className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-full text-md px-8 py-2.5 text-center mr-2 mb-2 ">Completed</button>
+                            </Link>
+
+                    }
+
 
                 </div>
                 {
