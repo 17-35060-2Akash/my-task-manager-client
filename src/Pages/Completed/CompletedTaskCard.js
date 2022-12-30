@@ -31,7 +31,7 @@ const CompletedTaskCard = ({ task, handleDelete, handleChangeStatus, handleComme
                     <p className="mb-8 font-normal text-gray-700 dark:text-gray-400">{posted_date === todays_date ? 'Today' : posted_date}</p>
                     <div className='flex flex-col lg:flex-row align-middle justify-center'>
                         <button onClick={() => handleChangeStatus(task)} type="button" className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Not Completed</button>
-                        <button onClick={() => setCommentToggler(!commentToggler)} type="button" className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-9 py-2.5 text-center mr-2 mb-2">Comment</button>
+                        <button onClick={() => setCommentToggler(!commentToggler)} type="button" className="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">{commentToggler ? "Hide Comment" : "Post Comment"}</button>
                     </div>
 
                     {
